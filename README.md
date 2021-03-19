@@ -41,12 +41,15 @@ The script will install the necessary packages and the necessery version of the 
 Set up new user
 ---------------
 ### Create new user
-- `sudo adduser -m <username>`, create a new user <username>, `-m` create home directory '/home/<username>/
-- `sudo passwd <username>`, sets a password for the user <username>, 
+- `sudo adduser <username>`... user friendly setting
+  or,
+- `sudo useradd -m <username>`... create a new user <username>, `-m` create home directory `/home/<username>/`
+- `sudo passwd <username>`... sets a password for the user `<username>`, 
 
 ### Set up ssh connection
 ```
 $ chmod +x setssh.sh
 # ./setssh.sh -n <username>
 ```
-
+The script sets the ssh configuration for user `<username>` and will generate private_key, public key and save
+it in a directory called `/home/<username>/sshkeys`
