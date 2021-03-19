@@ -42,7 +42,7 @@ Set up new user
 ---------------
 ### Create new user
 - `sudo adduser <username>`... user friendly setting
-  or,
+or,
 - `sudo useradd -m <username>`... create a new user <username>, `-m` create home directory `/home/<username>/`
 - `sudo passwd <username>`... sets a password for the user `<username>`, 
 
