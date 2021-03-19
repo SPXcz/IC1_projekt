@@ -3,6 +3,14 @@ Requirments:
 * Docker
 * Docker-compose
 
+Install packages
+---------------
+```
+$ chmod +x installPackages.sh
+# ./installPackages.sh
+```
+The script contains the necessary packages for the functionality of the OS.
+
 HTTP server configuration (html files)
 ---------------
 You have to chose which files to use before the server is ran (before you use docker-compose).
