@@ -5,9 +5,6 @@
 #		CVE-2021-3156
 #		CVE-2019-14287
 #
-# nutnost nainstalovat 
-#	gcc 'sudo apt-get install gcc'
-#	make 'sudo apt-get install make'
 
 #### bla bla ###
 
@@ -18,13 +15,7 @@ reboot() {
 	[[ "$x" = "y" ]] && sudo /sbin/reboot;
 }
 
-
-#### install packages ####
-
-sudo apt-get --assume-yes install gc 
-sudo apt-get --assume-yes install make
-
-#### download, install sudo ####
+###### download, install sudo ####
 
 cd /tmp/
 wget "https://www.sudo.ws/dist/sudo-1.8.27.tar.gz"
