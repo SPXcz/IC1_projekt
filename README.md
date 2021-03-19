@@ -42,7 +42,7 @@ Set up new user
 ---------------
 ### Create new user
 - `sudo adduser <username>`... user friendly setting
-or,
+- OR,
 - `sudo useradd -m <username>`... create a new user <username>, `-m` create home directory `/home/<username>/`
 - `sudo passwd <username>`... sets a password for the user `<username>`, 
 
@@ -52,4 +52,5 @@ $ chmod +x setssh.sh
 # ./setssh.sh -n <username>
 ```
 The script sets the ssh configuration for user `<username>` and will generate private_key, public key and save
-it in a directory called `/home/<username>/sshkeys`
+it in a directory called `/home/<username>/.ssh/`
+????????????????????????????????????????? musim sa nato pozriet, ze ktorym klucom sa mozem pripojit
