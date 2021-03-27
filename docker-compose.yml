@@ -1,19 +1,8 @@
 version: "3"
 
 services:
-    ftp-server:
-        image: delfer/alpine-ftp-server:latest
-        ports:
-            - "21:21" 
-            - "210000-21010:210000-21010"
-        environment:
-            - USERS=Anonymous||/home/anon
-        volumes:
-            - ./ftp-server:/home/anon
-        restart: on-failure
     http-server:
         build: ./http-server/.
         ports:
            - "80:80"
         restart: on-failure
-
