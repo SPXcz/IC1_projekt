@@ -25,10 +25,21 @@ Docker-compose creates both an ftp and http servers.
 FTP server installation
 ---------------
 ```
-# chmod +x ftp-server/setupFTP
+$ chmod +x ftp-server/setupFTP
 # ftp-server/setupFTP
 ```
 The main FTP directory is in /home and ownership of the folder is "none", therefore Anonymous user has access to all user data.
+
+FTP server installation
+---------------
+```
+$ chmod +x smb-server/setupSMB
+# smb-server/setupSMB
+```
+The commands above only install the server and shared folders. You still have to add users using the commands below.
+```
+# smbpasswd -a <username>
+```
 
 Sudo upgrade
 ---------------
