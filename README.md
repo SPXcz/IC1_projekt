@@ -15,17 +15,20 @@ HTTP server configuration (html files)
 ---------------
 You have to chose which files to use before the server is ran (before you use docker-compose).
 
-Docker (HTTP and FTP servers)
+Docker (HTTP server)
 ---------------
 ```
 # docker-compose up -d
 ```
 Docker-compose creates both an ftp and http servers.
 
-FTP server manipulation
+FTP server installation
 ---------------
-Unlike with HTTP server, you can manipukate with data in ./ftp-server as you wish without interruption
-and the result will be seen in the server.
+```
+# chmod +x ftp-server/setupFTP
+# ftp-server/setupFTP
+```
+The main FTP directory is in /home and ownership of the folder is "none", therefore Anonymous user has access to all user data.
 
 Sudo upgrade
 ---------------
