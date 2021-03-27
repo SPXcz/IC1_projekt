@@ -2,9 +2,6 @@
 
 apt-get install vsftpd
 cp vsftpd.conf /etc
-mkdir -p /var/ftp/pub
-mkdir -p /var/ftp/user1
-mkdir -p /var/ftp/user2
-chown nobody:nogroup /var/ftp/pub
+chown nobody:nogroup /home
 systemctl restart vsftpd
 echo "Done!"
