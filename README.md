@@ -30,7 +30,7 @@ $ chmod +x ftp-server/setupFTP
 ```
 The main FTP directory is in /home and ownership of the folder is "none", therefore Anonymous user has access to all user data.
 
-FTP server installation
+SMB server installation
 ---------------
 ```
 $ chmod +x smb-server/setupSMB
