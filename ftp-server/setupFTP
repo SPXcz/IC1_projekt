@@ -2,6 +2,6 @@
 
 apt-get install vsftpd
 cp vsftpd.conf /etc
-chown nobody:nogroup /home
+chown nobody:nogroup /home/var/ftp
 systemctl restart vsftpd
-echo "Done!"
+echo "FTP installed!"

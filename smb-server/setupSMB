@@ -1,0 +1,7 @@
+#!/bin/bash
+
+apt install samba
+mkdir /home/sambashare
+cp smb.conf /etc/samba/smb.conf
+sudo service smbd restart
+echo "Smaba installed!"
