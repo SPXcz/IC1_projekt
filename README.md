@@ -71,6 +71,6 @@ Set up new user
 `sudo bash -c 'echo "xpepik ALL=(ALL, !root) /bin/cat, /usr/bin/whoami" > /etc/sudoers.d/xpepik'`
 
 ### flags.txt
-`sudo bash -c 'echo "Zabi bobra zachranis strom" > /home/xpepik/flags.txt'`
-`sudo chmod 600 /home/xpepik/flags.txt`
+- `sudo bash -c 'echo "Zabi bobra zachranis strom" > /home/xpepik/flags.txt'`
+- `sudo chmod 600 /home/xpepik/flags.txt`
 
