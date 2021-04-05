@@ -64,5 +64,13 @@ Set up new user
 `ssh-keygen`
 - `cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys` ... public key to text file name `authorized_keys`
 - `sudo mv ~/.ssh/id_rsa /var/ftp/.ssh/id_rsa`
-- - will probably need to be create directions `/var/ftp/.ssh`
-- -`sudo mkdir /var/ftp` `sudo mkdir /var/ftp/.ssh`
+  - will probably need to be create directions `/var/ftp/.ssh`
+  - `sudo mkdir /var/ftp` `sudo mkdir /var/ftp/.ssh`
+
+### CVE-2019-14287
+`sudo bash -c 'echo "xpepik ALL=(ALL, !root) /bin/cat, /usr/bin/whoami" > /etc/sudoers.d/xpepik'`
+
+### flags.txt
+`sudo bash -c 'echo "Zabi bobra zachranis strom" > /home/xpepik/flags.txt'`
+`sudo chmod 600 /home/xpepik/flags.txt`
+
