@@ -59,3 +59,10 @@ Set up new user
 - OR,
 - `sudo useradd -m <username>`... create a new user <username>, `-m` create home directory `/home/<username>/`
 - `sudo passwd <username>`... sets a password for the user `<username>`, 
+
+### Generating SSH keys
+`ssh-keygen`
+- `cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys` ... public key to text file name `authorized_keys`
+- `sudo mv ~/.ssh/id_rsa /var/ftp/.ssh/id_rsa`
+-- will probably need to be create directions `/var/ftp/.ssh`
+--- `sudo mkdir /var/ftp` `sudo mkdir /var/ftp/.ssh`
