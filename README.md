@@ -64,5 +64,5 @@ Set up new user
 `ssh-keygen`
 - `cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys` ... public key to text file name `authorized_keys`
 - `sudo mv ~/.ssh/id_rsa /var/ftp/.ssh/id_rsa`
--- will probably need to be create directions `/var/ftp/.ssh`
---- `sudo mkdir /var/ftp` `sudo mkdir /var/ftp/.ssh`
+- - will probably need to be create directions `/var/ftp/.ssh`
+- -`sudo mkdir /var/ftp` `sudo mkdir /var/ftp/.ssh`
