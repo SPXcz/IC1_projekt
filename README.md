@@ -52,7 +52,7 @@ Set up new user
 ### Generating SSH keys
 `ssh-keygen -t rsa -b 2048` 
 - `mkdir /home/<username>/.ssh/authorized_keys`
-- `cp /home/<username>/.ssh/id_rsa.pub /home/<username>/.ssh/authorized_keys
+- `cp /home/<username>/.ssh/id_rsa.pub /home/<username>/.ssh/authorized_keys`
 - Private key to FTP
   - `mv /home/<username>/.ssh/id_rsa /home/<username>`
   - `chmod +rw /home/<username>/id_rsa`
