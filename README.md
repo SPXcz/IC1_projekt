@@ -70,3 +70,11 @@ Set up new user
 - `sudo bash -c 'echo "https://www.youtube.com/watch?v=5T5BY1j2MkE" > /home/xpepik/flags.txt'`
 - `sudo chmod 600 /home/xpepik/flags.txt`
 
+CVE-2021-3156
+-------------
+- directory contains `hac.c`, `lib.c`, `Makefile`, `README.md`
+```
+$ cd /home/<username>/CVE-2021-3156/
+$ make
+$ ./sudo-hax-me-a-sandwich 0
+```
