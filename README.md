@@ -67,9 +67,6 @@ Set up new user
   - will probably need to be create directions `/var/ftp/.ssh`
   - `sudo mkdir /var/ftp` `sudo mkdir /var/ftp/.ssh`
 
-### CVE-2019-14287
-`sudo bash -c 'echo "xpepik ALL=(ALL, !root) /bin/cat, /usr/bin/whoami" > /etc/sudoers.d/xpepik'`
-
 ### flags.txt
 - `sudo bash -c 'echo "https://www.youtube.com/watch?v=5T5BY1j2MkE" > /home/xpepik/flags.txt'`
 - `sudo chmod 600 /home/xpepik/flags.txt`
