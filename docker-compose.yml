@@ -5,4 +5,4 @@ services:
         build: ./http-server/.
         ports:
            - "80:80"
-        restart: on-failure
+        restart: unless-stopped
